@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Ckecker</title>
+    <style>
+        .box{
+            padding: 20px;
+            box-shadow: 0 0 4px;
+            margin: auto;
+            width: 250px;
+            margin-top: 100px;
+            padding-top: 5px;
+        }
+        .box2{
+            padding: 20px;
+            box-shadow: 0 0 4px;
+            margin: auto;
+            width: 250px;
+            margin-top: 10px;
+            padding-top: 5px;
+        }
+        .box input{
+            padding: 5px;
+            margin: 5px;
+            width: 220px;
+            border-top: none;
+            border-left: none;
+            border-right: none  ;
+            outline: none;
+        }
+        .box2 input{
+            padding: 5px;
+            margin: 5px;
+            border: none;
+            outline: none;
+        }
+        body{
+            font-family: Century Gothic;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Check Your Grade</h2>
+        <input type="text" name="marks" id="marks" placeholder="Enter Percentage">
+        <br>
+        <input type="submit" onclick="result()" value="Submit" name="submit" style="width:92%; outline:none; border: none; background-image:linear-gradient(to right,rgb(53, 173, 53),rgb(27, 173, 100)); color: white; font-weight: bolder; cursor: pointer;">
+    </div>
+    <div class="box2">
+        <h2>Result</h2>
+        <input type="text" name="result" readonly id="result" placeholder="Result">
+    </div>
+</body>
+</html>
+<script>
+    
+    
+    function result()
+    {
+        var a=parseInt(document.getElementById("marks").value);
+        if(a>=70 && a<=100)
+        {
+            document.getElementById('result').value="Distrinction";
+        }
+        else if(a>=60 && a<=70)
+        {
+            document.getElementById('result').value="First Class";
+        }
+        else if(a>=40 && a<60)
+        {
+            document.getElementById('result').value="Second Class";
+        }
+        else if(a<40)
+        {
+            document.getElementById('result').value="Fail";
+        }
+        else{
+            alert("Enter Percentage Between 0 - 100");
+        }
+    }
+    
+</script>
